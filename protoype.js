@@ -24,7 +24,7 @@ obj = {
 Object.prototype.mapForObject = function(callback,arr=[]){
   for ( y of Object.keys(this) ) {
     if ( typeof this[y] != 'object' ){
-      ( x => x && arr.push(x) )(callback(this[y],[y]))
+      ( x => x && arr.push(x) )(callback(this[y],y))
     }else{
       this[y].mapForObject(callback,arr)
     }
