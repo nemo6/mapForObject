@@ -9,7 +9,9 @@ function rec(x,arr=[]){
 
     }else{
 
-    	const isBelowThreshold = x => typeof x != 'object' // vérifie que la valeur n'est ni objet ni un tableau
+	// x[y].every(isBelowThreshold) : vérifie que chaque élement dans x[y] n'est ni un objet ni un tableau
+
+    	const isBelowThreshold = x => typeof x != 'object'
 
     	if( Array.isArray(x[y]) && x[y].every(isBelowThreshold) && y == "k" )
     	arr.push(x[y])
