@@ -24,7 +24,7 @@ obj = {
 function mapForObject(x,callback,arr=[]){
   for ( y of Object.keys(x) ) {
     if ( typeof x[y] != 'object' ){
-      ( x => x && arr.push(x) )(callback(x[y],[y]))
+      ( x => x && arr.push(x) )(callback(x[y],y))
     }else{
       mapForObject(x[y],callback,arr)
     }
