@@ -21,7 +21,7 @@ obj = {
   }
 }
 
-function rec(x,arr=[]){
+function mapForObject (x,arr=[]){
   for ( y of Object.keys(x) ) {
     if ( typeof x[y] != 'object' ){
       if( y == "test2" ) // le callback remplace ça
@@ -33,4 +33,4 @@ function rec(x,arr=[]){
   return arr
 }
 
-console.log(rec(obj)) // => [7, 8, 14, 57]
+console.log( mapForObject(obj) ) // => [7, 8, 14, 57]
