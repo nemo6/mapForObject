@@ -1,0 +1,19 @@
+function mapForObject(x,callback,v=[],i=0,p=[]){
+
+	for ( y of Object.keys(x) ) {
+
+		if ( typeof x[y] != 'object' || x[y] == null ){
+
+			( (x) => x && v.push(x) )( callback(x[y],y,p) ) // x est l'objet parent x[y] value y key x parent p table of parent
+		
+		}else{
+
+			p.push(x[y])
+			i++
+			mapForObject(x[y],callback,v,i,p)
+			i--
+			p.pop()
+		}
+	}
+	return v
+}
