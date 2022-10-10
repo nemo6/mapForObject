@@ -9,5 +9,5 @@ function mapForObject(x,callback,arr=[]){
 	return arr
 
 }
-
+//
 console.log(mapForObject( obj, (x,i,p) => i == "title" && [x,p.dateAdded] )) // p correspond a l'objet qui contient la valeur x
