@@ -2,7 +2,7 @@ function mapForObject(x,callback,v=[],i=0,p=[]){
 
 	let last = (x,n) => x[x.length-n]
 
-	for ( y of Object.keys(x) ) {
+	for ( let y of Object.keys(x) ) {
 
 		if ( typeof x[y] != 'object' || x[y] == null ){
 
@@ -17,6 +17,7 @@ function mapForObject(x,callback,v=[],i=0,p=[]){
 			p.pop()
 		}
 	}
+	
 	return v
 }
 
