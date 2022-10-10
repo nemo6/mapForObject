@@ -21,16 +21,16 @@ obj = {
   }
 }
 
-function mapForObject (x,arr=[]){
+function mapForObject(x,arr=[]){
   for ( y of Object.keys(x) ) {
     if ( typeof x[y] != 'object' ){
       if( y == "test2" ) // le callback remplace ça
-      arr.push(x[y]+2) // et le "+2"
+      arr.push(x[y])
     }else{
-      rec(x[y],arr)
+      mapForObject(x[y],arr)
     }
   }
   return arr
 }
 
-console.log( mapForObject(obj) ) // => [7, 8, 14, 57]
+console.log( mapForObject(obj) ) // => [5, 6, 12, 55]
